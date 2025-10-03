@@ -17,7 +17,7 @@ class Cafe:
 
         if "vaccine" not in visitor:
             raise NotVaccinatedError(
-                f"Посетитель {visitor.get("name", "N/A")} не вакцинирован."
+                f'Посетитель {visitor.get("name", "N/A")} не вакцинирован.'
             )
 
         vaccine_info = visitor["vaccine"]
@@ -25,13 +25,13 @@ class Cafe:
         if ("expiration_date" in vaccine_info
                 and vaccine_info["expiration_date"] < today):
             raise OutdatedVaccineError(
-                f"Вакцина посетителя {visitor.get("name", "N/A")} истекла "
+                f'Вакцина посетителя {visitor.get("name", "N/A")} истекла '
                 f"({vaccine_info["expiration_date"]})."
             )
 
         if visitor.get("wearing_a_mask") is not True:
             raise NotWearingMaskError(
-                f"Посетитель {visitor.get("name", "N/A")} не носит маску."
+                f'Посетитель {visitor.get("name", "N/A")} не носит маску.'
             )
 
         return f"Welcome to {self.name}"
