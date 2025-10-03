@@ -26,7 +26,7 @@ class Cafe:
                 and vaccine_info["expiration_date"] < today):
             raise OutdatedVaccineError(
                 f'Вакцина посетителя {visitor.get("name", "N/A")} истекла '
-                f"({vaccine_info["expiration_date"]})."
+                f'({vaccine_info["expiration_date"]}).'
             )
 
         if visitor.get("wearing_a_mask") is not True:
